@@ -25,14 +25,10 @@ public class PersonList {
             head = kayit;
             tail = kayit;
             System.out.println("İlk kayıt eklendi");
-        } else if (head != null) {
+        } else{
             kayit.next = head;
             head = kayit;
             System.out.println(name + " isimli kişi rehbere kayıt edildi");
         }
     }
-
-
-
-
 }
