@@ -31,4 +31,42 @@ public class PersonList {
             System.out.println(name + " isimli kişi rehbere kayıt edildi");
         }
     }
+
+    void sil(){
+        if(head == null){
+            System.out.println("Liste boş silinecek kayıt yok!");
+        }else{
+            System.out.println("Silmek istediğiniz kayıtın numarasını giriniz: ");
+            phoneNumber = scan.nextLong();
+
+            if(phoneNumber == head.phoneNumber && head.next == null){
+                head = null;
+                tail = null;
+                System.out.println(phoneNumber + " numaralı kayıt rehberden silindi, rehberde kayıtlı kişi kalmadı");
+            }else if(phoneNumber == head.phoneNumber && head.next != null){
+                head.next = head;
+                System.out.println(phoneNumber + " numaralı kayıt silindi");
+            }else{
+                temp = head;
+                temp2 = head;
+
+                while(temp.next != null){
+                    if(phoneNumber == temp.phoneNumber){
+                        temp2.next = temp.next;
+                        System.out.println(phoneNumber + " numaralı kayıt silindi");
+                    }
+                    temp2 = temp;
+                    temp = temp.next;
+                }
+                if(phoneNumber == temp.phoneNumber){
+                    temp2.next = null;
+                    tail = temp2;
+                    System.out.println(phoneNumber + " numaralı öğrenci silindi");
+                }
+
+            }
+
+        }
+    }
+
 }
