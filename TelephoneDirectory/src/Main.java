@@ -5,7 +5,7 @@ public class Main {
 
         int selection = -1;
 
-        //PersonNode personNode = new PersonNode();
+        PersonList personList = new PersonList();
         Scanner scanner = new Scanner(System.in);
 
         while(selection != 0){
@@ -15,6 +15,17 @@ public class Main {
             System.out.println("Rehberden Kayıt Silmek İçin: 2");
             System.out.println("Rehberi Görüntülemek İçin: 3");
             selection = scanner.nextInt();
+
+            if(selection == 1){
+                personList.ekle();
+            } else if (selection == 2) {
+                personList.sil();
+            } else if (selection == 3) {
+                personList.yazdir();
+            }else if (selection > 3){
+                System.out.println("Hatalı sayı girişi yaptınız");
+            }
+
         }
     }
 }

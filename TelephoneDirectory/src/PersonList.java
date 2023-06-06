@@ -12,11 +12,11 @@ public class PersonList {
     Scanner scan = new Scanner(System.in);
 
     void ekle() {
-        System.out.println("Rehbere eklemek istediğiniz kişinin adını yazınız");
+        System.out.print("Rehbere eklemek istediğiniz kişinin adını yazınız : ");
         name = scan.nextLine();
-        System.out.println("Rehbere eklemek istediğiniz kişinin soyadını yazınız");
+        System.out.print("Rehbere eklemek istediğiniz kişinin soyadını yazınız : ");
         surname = scan.nextLine();
-        System.out.println("Rehbere eklemek istediğiniz kişinin numarasını yazınız");
+        System.out.print("Rehbere eklemek istediğiniz kişinin numarasını yazınız : ");
         phoneNumber = scan.nextInt();
 
         PersonNode kayit = new PersonNode(name, surname, phoneNumber);
@@ -69,4 +69,19 @@ public class PersonList {
         }
     }
 
+    void yazdir(){
+        if(head == null){
+            System.out.println("Rehberde kayıtlı kişi yok");
+        }else{
+            temp = head;
+            while(temp != null){
+                System.out.println("İsim : " + name);
+                System.out.println("Surname : " + surname);
+                System.out.println("Telefon Numarası : " + phoneNumber);
+                temp = temp.next;
+            }
+        }
+
+
+    }
 }
